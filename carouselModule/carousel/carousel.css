@@ -1,0 +1,74 @@
+@import '../components/nav/nav.css';
+@import '../components/slide/slide.css';
+@import '../components/card/card.css';
+@import '../components/coupon/coupon.css';
+
+.carousel {
+  position: relative;
+  border-bottom: 6px solid var(--tempBlue);
+  color: var(--slate);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transition: all .3s ease;
+  cursor: pointer;
+  width: 25px;
+  height: 100%;
+  padding: 0 1rem;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow.prev {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.arrow.next {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.arrow:before {
+  position: relative;
+  display: inline-block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  transition: inherit;
+}
+
+.arrow.prev:before {
+  transform: rotate(-45deg) translateX(10px);
+  border-top: 2px solid rgba(64,78,96,0.33); 
+  border-left: 2px solid rgba(64,78,96,0.33); 
+}
+
+.arrow.next:before {
+  transform: rotate(45deg) translateX(-10px);
+  border-top: 2px solid rgba(64,78,96,0.33); 
+  border-right: 2px solid rgba(64,78,96,0.33); 
+}
+
+.arrow:hover:before {
+  border-color: var(--slate);
+}
+
+@media (max-width: 991px) {
+  .arrows {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel {
+    margin: 0 4rem;
+  }
+  .arrow:hover {
+    padding: 0 1.5rem;
+  }
+}

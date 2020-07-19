@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolution Carousel Test App</title>
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <div class="carousel">
+
+      <ul class="nav">
+        <li class="nav-item">Steel Wheels</li>
+        <li class="nav-item">Alloy Wheels</li>
+        <li class="nav-item">Chrome Coated</li>
+        <li class="nav-item">Powder Coated</li>
+      </ul>
+
+      <div class="slider">
+        <div class="slide">
+          <img src="./images/steelwheels.jpg" alt="">
+          <div id="card" class="card visible">
+            <h3 class="card-title">Steel Wheels</h3>
+            <p class="card-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#!" class="card-link">Go to Page <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/alloywheels.jpg" alt="">
+          <div id="card" class="card">
+            <h3 class="card-title">Alloy Wheels</h3>
+            <p class="card-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#!" class="card-link">Go to Page <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/powderwheels.jpg" alt="">
+          <div id="card" class="card">
+            <h3 class="card-title">Chrome Coated Wheels</h3>
+            <p class="card-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#!" class="card-link">Go to Page <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/chromewheels.jpg" alt="">
+          <div id="card" class="card">
+            <h3 class="card-title">Powder Coated Wheels</h3>
+            <p class="card-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#!" class="card-link">Go to Page <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>    
+      
+      <div class="arrows">
+        <div class="prev arrow"></div>
+        <div class="next arrow"></div>
+      </div>
+
+      <a href="#!" class="coupon">
+        <div class="coupon-bg"></div>
+        <div class="coupon-top">20% off</div>
+        <div class="coupon-bottom">first purchase</div>
+      </a>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>

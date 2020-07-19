@@ -1,0 +1,74 @@
+.coupon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 1rem 1rem 1.75rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s ease;
+  overflow: hidden;
+}
+
+.coupon * {
+  transition: inherit;
+  opacity: 0;
+  transform: translateX(150%);
+}
+
+.coupon *.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.coupon .coupon-bg {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 100px solid var(--tempBlue);
+  border-left: 100px solid transparent;
+  transition: all .3s ease;
+}
+
+.coupon-top {
+  position: relative;
+  font-size: 2em;
+  font-weight: 400;
+  background: rgba(59, 102, 173, 0.8);
+  padding: 0 .25rem .25rem;
+}
+
+.coupon-bottom {
+  position: relative;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .coupon:hover .coupon-bg {
+    border-top: 105px solid var(--tempBlue);
+    border-left: 105px solid transparent;
+  }
+  .coupon:hover .coupon-top {
+    transform: translateX(-10px);
+  }
+  .coupon:hover .coupon-bottom {
+    transform: translateX(-5px);
+  }
+}
+
+@media (max-width: 991px) {
+  .coupon {
+    font-size: 0.75rem;
+  }
+  .coupon:before {
+    border-top: 75px solid var(--tempBlue);
+    border-left: 75px solid transparent;
+  }
+  .coupon-bottom {
+    font-weight: 400;
+  }
+}

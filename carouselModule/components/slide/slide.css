@@ -1,0 +1,33 @@
+.slider {
+  position: relative;
+  height: 60vh;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.slide img {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .slides {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .slides {
+    height: 34vh;
+  }
+}
