@@ -1,9 +1,11 @@
 import '../node_modules/@fortawesome/fontawesome-free/js/all.js';
+import Coupon from '../components/coupon/coupon.js';
 
 export default class Carousel {
 
   constructor(carouselElement, options) {
 
+    this.carouselElement = carouselElement;
     this.carousel = document.querySelector(carouselElement);
     this.options = options;
     this.slider = this.carousel.querySelector('.slider');
@@ -23,14 +25,11 @@ export default class Carousel {
       couponeClicks: 0
     }
 
-    this.carousel.addEventListener('beforeSlideChange', (e) => {
-      console.log('before change')
-    })
-
     // Intialize carousel
     if ( ! this.slider.classList.contains('carousel-initialized') ) {
       this.slider.classList.add('carousel-initialized')
       this.carousel.dispatchEvent(this.events.init)
+      this.handleOptions();
       this.setArrows();
       this.setNav();
       this.updateCarousel(this.slideIndex);
@@ -83,6 +82,22 @@ export default class Carousel {
 
   } //end update carousel
 
+  handleOptions() {
+    const options = this.options;
+    const couponOptions = options.coupon;
+    const navOption = options.nav;
+    const carouselElem = document.querySelector(this.carouselElement);
+
+    if (couponOptions) {
+      const coupon = new Coupon(couponOptions);
+      carouselElem.appendChild(coupon);
+    }
+
+
+    
+  }
+  
+
   setArrows() {
     this.arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
@@ -98,5 +113,9 @@ export default class Carousel {
         this.currentSlide(navIndex)
       });
     });
-  } 
+  }
+
+  autoPlay() {
+
+  }
 }

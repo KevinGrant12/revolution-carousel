@@ -1,7 +1,27 @@
 @import '../components/nav/nav.css';
-@import '../components/slide/slide.css';
-@import '../components/card/card.css';
 @import '../components/coupon/coupon.css';
+
+.slider {
+  position: relative;
+  height: 60vh;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.slide img {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 
 .carousel {
   position: relative;
@@ -59,8 +79,17 @@
 }
 
 @media (max-width: 991px) {
+  .slides {
+    height: 50vh;
+  }
   .arrows {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .slides {
+    height: 34vh;
   }
 }
 

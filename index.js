@@ -3,8 +3,11 @@ import Carousel from './carouselModule/carousel/carousel.js';
 // Initialize carousel & options
 const createCarousel = new Carousel('.carousel', {
   nav: true,
-  arrows: true,
-  auto: true
+  auto: true,
+  coupon: {
+    percent: 20,
+    position: 'top'
+  }
 });
 
 // Example usage
