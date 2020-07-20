@@ -56,6 +56,7 @@ The carousel emits custom events that can be utilized to customize the slider
 1. Finish nav abstraction and generate nav items based on nav option and user-added html attributes for nav item titles
 2. Abstract arrows from html and generate in script
 3. Abstract card into separate component that can be swapped out or customized
+4. Idea for allowing users to add custom html attribute that would track what section of the card was clicked ( I.e. info or coupon )
 
 ## Copyright
 
