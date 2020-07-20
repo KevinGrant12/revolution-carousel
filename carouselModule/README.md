@@ -35,7 +35,7 @@ User can initialize carousel with varoius options.
 - **Nav** (bool) - Optionally hide the navigation on top the slider
 - **AutoPlay** (bool) - Tell slider to loop automatically
 - **Coupon** (obj)
-  - Initiate the built-in coupon component.
+  - Initiates the built-in coupon component.
   - Set your discount (int)
   - Set your message (str)
 
