@@ -1,4 +1,4 @@
-import Coupon from '../components/coupon/coupon.js';
+import Coupon from './components/coupon/coupon.js';
 
 export default class Carousel {
 
@@ -8,9 +8,10 @@ export default class Carousel {
     this.carousel = document.querySelector(carouselElement);
     this.options = options;
     this.slider = this.carousel.querySelector('.slider');
-    this.slides = [...this.carousel.getElementsByClassName('slide')];
+    this.slides = [...this.slider.children];
     this.arrows = [...this.carousel.getElementsByClassName('arrow')];
     this.navItems = [...this.carousel.getElementsByClassName('nav-item')];
+    this.autoPlay = options.autoPlay;
     this.firstLoad = true;
     this.before = true;
     this.slideIndex = 1;
@@ -80,23 +81,7 @@ export default class Carousel {
     this.firstLoad = false;
 
   } //end update carousel
-
-  handleOptions() {
-    const options = this.options;
-    const couponOptions = options.coupon;
-    const navOption = options.nav;
-    const carouselElem = document.querySelector(this.carouselElement);
-
-    if (couponOptions) {
-      const coupon = new Coupon(couponOptions);
-      carouselElem.appendChild(coupon);
-    }
-
-
-    
-  }
   
-
   setArrows() {
     this.arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
@@ -114,7 +99,25 @@ export default class Carousel {
     });
   }
 
-  autoPlay() {
+  autoPlayStart() {
+    setInterval(() => {
+      this.changeSlide(1)
+    }, 3000)
+  }
 
+  handleOptions() {
+    const options = this.options;
+    const couponOptions = options.coupon;
+    const navOption = options.nav;
+    const carouselElem = document.querySelector(this.carouselElement);
+
+    if (couponOptions) {
+      const coupon = new Coupon(couponOptions);
+      carouselElem.appendChild(coupon);
+    }
+
+    if ( this.autoPlay === true ) {
+      this.autoPlayStart();
+    }
   }
 }

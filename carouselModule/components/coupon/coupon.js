@@ -2,6 +2,7 @@ export default class Coupon {
   constructor(options) {
     this.percent = options.percent;
     this.position = options.position;
+    this.message = options.message;
 
     const coupon = document.createElement('a');
           coupon.classList.add('coupon');
@@ -12,7 +13,7 @@ export default class Coupon {
           couponTop.innerHTML = this.percent + '% off'
     const couponBottom = document.createElement('div');
           couponBottom.classList.add('coupon-bottom');
-          couponBottom.innerHTML = 'first purchase'
+          couponBottom.innerHTML = this.message;
     
     coupon.appendChild(couponBg);
     coupon.appendChild(couponTop);

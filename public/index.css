@@ -1,5 +1,4 @@
-@import './carouselModule/carousel/carousel.css';
-@import './css/card.css';
+@import '../carouselModule/carousel.css';
 
 :root {
 
