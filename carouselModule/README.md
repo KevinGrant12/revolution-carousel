@@ -4,16 +4,27 @@
 
 A reusable carousel component written in vanilla js.
 
-Coading assessment for the team at Revolution Parts.
+Coding assessment for the team at Revolution Parts.
 
 ---
 
 ## Demo
 
-### Run a local server.
-Ex: Install npm > install http-server > run "http-server" in project folder
+Demonstrates how the user can select options and use custom events to animate things like an information card and the built-in coupon.
 
-Ex: Install php > run "php -S localhost:8080" in project folder
+### Run a local server.
+**Ex:** Install npm > install http-server > run "http-server" in project folder
+
+**Ex:** Install php > run "php -S localhost:8080" in project folder
+
+---
+
+## Usage
+
+1. Create carousel div with class name of choice
+2. Create ".slider" div inside carousel. ( Any children are treated as slides )
+3. Add slides with desired content.
+4. In script, initiate slider with preferred options.
 
 ---
 
@@ -21,12 +32,30 @@ Ex: Install php > run "php -S localhost:8080" in project folder
 
 User can initialize carousel with varoius options.
 
-- **Nav** - Optionally hide the navigation on top the slider
-- **AutoPlay** - Tell slider to loop automatically
-- **Coupon**
+- **Nav** (bool) - Optionally hide the navigation on top the slider
+- **AutoPlay** (bool) - Tell slider to loop automatically
+- **Coupon** (obj)
   - Initiate the built-in coupon component.
-  - Set your discount
-  - Set your message
+  - Set your discount (int)
+  - Set your message (str)
+
+---
+
+## Events
+
+The carousel emits custom events that can be utilized to customize the slider
+
+- **init** - Fires when slider is initialized on first load
+- **beforeChange** - Fires before slide changes 
+- **afterChange** - Fires after slide changes
+
+---
+
+## Future Updates
+
+1. Finish nav abstraction and generate nav items based on nav option and user-added html attributes for nav item titles
+2. Abstract arrows from html and generate in script
+3. Abstract card into separate component that can be swapped out or customized
 
 ## Copyright
 
