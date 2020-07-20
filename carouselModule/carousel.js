@@ -17,7 +17,7 @@ export default class Carousel {
     this.before = true;
     this.slideIndex = 1;
     this.events = {
-      init: new CustomEvent('carouselInitEvent'),
+      init: new CustomEvent('carouselInit'),
       beforeChange: new CustomEvent('beforeSlideChange'),
       afterChange: new CustomEvent('afterSlideChange')
     }

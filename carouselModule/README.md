@@ -13,9 +13,9 @@ Coding assessment for the team at Revolution Parts.
 Demonstrates how the user can select options and use custom events to animate things like an information card and the built-in coupon.
 
 ### Run a local server.
-**Ex:** Install npm > install http-server > run "http-server" in project folder
+**Ex:** Install npm > install http-server > run "./ http-server" in project directory
 
-**Ex:** Install php > run "php -S localhost:8080" in project folder
+**Ex:** Install php > run "php -S localhost:8080" in project directory
 
 ---
 
@@ -45,9 +45,9 @@ User can initialize carousel with varoius options.
 
 The carousel emits custom events that can be utilized to customize the slider
 
-- **init** - Fires when slider is initialized on first load
-- **beforeChange** - Fires before slide changes 
-- **afterChange** - Fires after slide changes
+- **carouselInit** - Fires when slider is initialized on first load
+- **beforeSlideChange** - Fires before slide changes 
+- **afterSlideChange** - Fires after slide changes
 
 ---
 
