@@ -20,6 +20,7 @@ carousel.addEventListener('beforeSlideChange', () => {
   card.classList.remove('visible')
   rotateCoupon('remove')
 });
+
 carousel.addEventListener('afterSlideChange', () => {
   const card = document.querySelector('.active-slide .card');
   card.classList.add('visible')

@@ -10,6 +10,7 @@ export default class Carousel {
     this.slider = this.carousel.querySelector('.slider');
     this.slides = [...this.slider.children];
     this.arrows = [...this.carousel.getElementsByClassName('arrow')];
+    this.nav = document.querySelector('.nav');
     this.navItems = [...this.carousel.getElementsByClassName('nav-item')];
     this.autoPlay = options.autoPlay;
     this.firstLoad = true;
@@ -20,10 +21,6 @@ export default class Carousel {
       beforeChange: new CustomEvent('beforeSlideChange'),
       afterChange: new CustomEvent('afterSlideChange')
     }
-    this.stats = {
-      cardClicks: 0,
-      couponeClicks: 0
-    }
 
     // Intialize carousel
     if ( ! this.slider.classList.contains('carousel-initialized') ) {
@@ -31,7 +28,6 @@ export default class Carousel {
       this.carousel.dispatchEvent(this.events.init)
       this.handleOptions();
       this.setArrows();
-      this.setNav();
       this.updateCarousel(this.slideIndex);
     }
   }
@@ -85,6 +81,8 @@ export default class Carousel {
   setArrows() {
     this.arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
+        clearInterval(this.slideInterval)
+        this.autoPlayStart()
         return arrow.classList.contains('prev') ? this.changeSlide(-1) : this.changeSlide(1);
       });
     });
@@ -95,14 +93,16 @@ export default class Carousel {
       item.addEventListener('click', () => {
         const navIndex = this.navItems.indexOf(item) + 1;
         this.currentSlide(navIndex)
+        clearInterval(this.slideInterval)
+        this.autoPlayStart()
       });
     });
   }
 
   autoPlayStart() {
-    setInterval(() => {
+   this.slideInterval =  setInterval(() => {
       this.changeSlide(1)
-    }, 3000)
+    }, 4000)
   }
 
   handleOptions() {
@@ -111,13 +111,19 @@ export default class Carousel {
     const navOption = options.nav;
     const carouselElem = document.querySelector(this.carouselElement);
 
+    // Coupon option
     if (couponOptions) {
       const coupon = new Coupon(couponOptions);
       carouselElem.appendChild(coupon);
     }
 
+    // Autoplay option
     if ( this.autoPlay === true ) {
       this.autoPlayStart();
+    }
+
+    if ( this.options.nav === true ) {
+      this.setNav();
     }
   }
 }
