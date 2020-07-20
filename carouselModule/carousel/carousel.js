@@ -1,4 +1,3 @@
-import '../node_modules/@fortawesome/fontawesome-free/js/all.js';
 import Coupon from '../components/coupon/coupon.js';
 
 export default class Carousel {
